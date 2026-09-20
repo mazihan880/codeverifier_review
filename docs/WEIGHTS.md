@@ -1,9 +1,7 @@
 # Model weights
 
-Anonymous Hugging Face repository placeholder:
+The review checkpoint is available through the anonymous Hugging Face mirror:
 
-```text
-https://huggingface.co/<anonymous-organization>/<anonymous-model>
-```
+https://anonymous-hf.com/a/9lomute2oezs/
 
-Replace this placeholder with the anonymous model repository when it is available. For local training, pass the downloaded model directory through `--model`.
+For local training, pass the downloaded model directory through `--model`.

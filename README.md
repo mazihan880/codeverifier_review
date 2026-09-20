@@ -24,7 +24,7 @@
 </p>
 
 > [!NOTE]
-> Configuration templates keep model identifiers, data locations, and experiment values open. The anonymous checkpoint link will be activated with the model release.
+> This anonymous repository contains the CodeVerifier training code. Model checkpoints are released separately through an anonymous Hugging Face repository.
 
 ## 🌐 Why CodeVerifier?
 
@@ -115,13 +115,11 @@ The Swift adapter connects rollout outputs to the CodeVerifier scorer and constr
 
 ## 📦 Model weights
 
-The anonymous Hugging Face location is reserved at:
+The review checkpoint is available through the anonymous Hugging Face mirror:
 
-```text
-https://huggingface.co/<anonymous-organization>/<anonymous-model>
-```
+https://anonymous-hf.com/a/9lomute2oezs/
 
-The checkpoint will follow the Hugging Face Transformers layout. Local training accepts either a hub identifier or a downloaded model directory through `--model`.
+The checkpoint follows the Hugging Face Transformers layout. Local training accepts either a hub identifier or a downloaded model directory through `--model`.
 
 ## 🏗️ Repository map
 
