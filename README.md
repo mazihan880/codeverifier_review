@@ -28,9 +28,9 @@
 
 ## 🌐 Why CodeVerifier?
 
-A code verifier should do more than assign a label after execution. It should identify the code regions that support its judgment and remain useful when the input is a complete program, a repository snapshot, or an intermediate code state.
+Execution provides reliable feedback, but it often arrives too late for large candidate pools, online policy updates, and repository workflows. CodeVerifier supplies timely reward signals for reinforcement learning with verifiable rewards (RLVR) and candidate search, as well as rapid quality feedback for filtering generated training data before a full test run.
 
-CodeVerifier learns this behavior in two stages. Evidence projection turns execution outcomes and repair intervals into supervised targets. RVPG then separates verdict feedback from region feedback and applies each signal to the output field that produced it.
+Rather than returning only a scalar score, CodeVerifier produces a verdict, a brief explanation, and supporting code regions for complete programs, intermediate edits, and repository code states. It learns these judgments from historical execution outcomes and successful repairs through evidence projection and RVPG.
 
 ## ✨ Highlights
 
