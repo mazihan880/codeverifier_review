@@ -1,0 +1,25 @@
+{
+  "source": "Codeforces 77C, Beavermuncher-0xFF",
+  "source_url": "https://codeforces.com/problemset/problem/77/C",
+  "dataset": "TACO non-SPJ frozen test split",
+  "split": "test",
+  "instance_id": "09405248dbd207cf2c7fe37b98c353a1",
+  "question_id": "985c0e3f54b7575c17643afe5ec402e7",
+  "submission_language": "python",
+  "problem_summary": "Given a rooted tree with beaver counts, maximize the number eaten by a walk that starts and ends at the root and consumes one beaver on every move.",
+  "submission": "n = int(input())\nk = list(map(int, input().split()))\nadj = [[] for _ in range(n + 1)]\nfor _ in range(n - 1):\n    u, v = map(int, input().split())\n    adj[u].append(v)\n    adj[v].append(u)\ns = int(input())\nparent = [0] * (n + 1)\nchildren = [[] for _ in range(n + 1)]\nvisited = [False] * (n + 1)\nfrom collections import deque\nq = deque([s])\nvisited[s] = True\nparent[s] = -1\nwhile q:\n    u = q.popleft()\n    for v in adj[u]:\n        if not visited[v]:\n            visited[v] = True\n            parent[v] = u\n            children[u].append(v)\n            q.append(v)\npost_order = []\nstack = [(s, False)]\nwhile stack:\n    u, visited_flag = stack.pop()\n    if not visited_flag:\n        stack.append((u, True))\n        for v in reversed(children[u]):\n            stack.append((v, False))\n    else:\n        post_order.append(u)\nf = [0] * (n + 1)\ntotal = 0\nfor u in post_order:\n    if u == s:\n        contrib = []\n        for v in children[u]:\n            contrib.append(f[v] + 1)\n        contrib.sort(reverse=True)\n        take = min(k[s - 1], len(contrib))\n        total = sum(contrib[:take]) if take > 0 else 0\n    else:\n        available = k[u - 1] - 1\n        contrib = []\n        for v in children[u]:\n            if f[v] + 1 > 0:\n                contrib.append(f[v] + 1)\n        contrib.sort(reverse=True)\n        take = min(available, len(contrib))\n        sum_contrib = sum(contrib[:take]) if take > 0 else 0\n        f[u] = 1 + sum_contrib\nprint(total)",
+  "execution": {
+    "runner": "Codeforces official execution labels",
+    "execution_environment": "",
+    "official_pass": false,
+    "official_test_count": 74,
+    "official_pass_count": 33,
+    "official_pass_rate": 0.44594594594594594,
+    "verdict": "WA"
+  },
+  "target": {
+    "rationale": "The official test run rejects this submission.",
+    "regions": [],
+    "verdict": "WA"
+  }
+}

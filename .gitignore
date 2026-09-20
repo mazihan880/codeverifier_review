@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+wandb/
+outputs/
+checkpoints/
+logs/
+data/
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+.DS_Store

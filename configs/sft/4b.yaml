@@ -1,0 +1,20 @@
+stage: sft
+model_size: ""
+seed: ""
+dtype: ""
+train_type: ""
+learning_rate: ""
+weight_decay: ""
+global_batch_size: ""
+epochs: ""
+max_length: ""
+lr_scheduler: ""
+warmup_ratio: ""
+data:
+  train: ""
+  validation: ""
+  forms: []
+projection:
+  teacher_candidates: ""
+  failure_quality_threshold: ""
+  require_repair_overlap: ""
